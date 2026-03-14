@@ -108,14 +108,14 @@ int main() {
     printf("PIB per Capita: %d\n", (pibPerCapita1 > pibPerCapita2));
     printf("Densidade Populacional (menor vence): %d\n", (densidade1 < densidade2));
 
-    printf("Comparação de cartas (Atributo: População):");
-    printf("Carta 1 - ${nomeDaCidade1}: ${populacao1}");
-    printf("Carta 2 - ${nomeDaCidade1}: ${populacao1}");
+    printf("Comparação de cartas (Atributo: População):\n");
+    printf("Carta 1 - %s: %lu\n", nomeDaCidade1, populacao1);
+    printf("Carta 2 - %s: %lu\n", nomeDaCidade2, populacao2);
 
     if (populacao1 > populacao2) {
-        printf("Resultado: Carta 1 (%) venceu!", nomeDaCidade1);
+        printf("Resultado: Carta 1 (%s) venceu!", nomeDaCidade1);
     } else {
-        printf("Resultado: Carta 2 (${nomeDaCidade2}) venceu!");
+        printf("Resultado: Carta 2 (%s) venceu!", nomeDaCidade2);
     }   
 
     return 0;
