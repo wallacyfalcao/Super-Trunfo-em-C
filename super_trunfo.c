@@ -99,9 +99,9 @@ int main() {
     } while (atributo2 == atributo1);
 
     float valor1_c1, valor1_c2;
+    float valor2_c1, valor2_c2;
 
-    switch (atributo1)
-    {
+    switch (atributo1) {
     case 1:
         valor1_c1 = populacao1;
         valor1_c2 = populacao2;
@@ -132,6 +132,39 @@ int main() {
         valor1_c2 = densidade2;
         resultado = (densidade1 < densidade2);
         break;
+    }
+    switch (atributo2) {
+    case 1:
+        valor2_c1 = populacao1;
+        valor2_c2 = populacao2;
+        resultado = (populacao1 > populacao2);
+        break;
+    case 2:
+        valor2_c1 = area1;
+        valor2_c2 = area2;
+        resultado = (area1 > area2);
+        break;
+    case 3:
+        valor2_c1 = pib1;
+        valor2_c2 = pib2;
+        resultado = (pib1 > pib2);
+        break;
+    case 4:
+        valor2_c1 = numeroPontosTuristicos1;
+        valor2_c2 = numeroPontosTuristicos2;
+        resultado = (numeroPontosTuristicos1 > numeroPontosTuristicos2);
+        break;
+    case 5:
+        valor2_c1 = pibPerCapita1;
+        valor2_c2 = pibPerCapita2;
+        resultado = (pibPerCapita1 > pibPerCapita2);
+        break;
+    case 6:
+        valor2_c1 = densidade1;
+        valor2_c2 = densidade2;
+        resultado = (densidade1 < densidade2);
+        break;
+
     default:
         printf("Opção inválida!\n");
         return 0;
@@ -139,15 +172,15 @@ int main() {
 
     printf("\nResultado:\n");
     printf("%s X %s\n", nomeDaCidade1, nomeDaCidade2);
-    printf("Atributo escolhido: %d\n", atributo1);
-    printf("Valores: %s = %.2f | %s = %.2f\n",
-           nomeDaCidade1, valor1_c1,
-           nomeDaCidade2, valor1_c2);
+
+    printf("\nAtributo 1 (%d): %.2f vs %.2f\n", atributo1, valor1_c1, valor1_c2);
+    printf("Atributo 2 (%d): %.2f vs %.2f\n", atributo2, valor2_c1, valor2_c2);
 
     if (resultado)
-        printf("Carta 1 (%s) venceu!\n", nomeDaCidade1);
+        printf("\nCarta 1 (%s) venceu!\n", nomeDaCidade1);
     else
-        printf("Carta 2 (%s) venceu!\n", nomeDaCidade2);
+        printf("\nCarta 2 (%s) venceu!\n", nomeDaCidade2);
+
 
     return 0;
 }
