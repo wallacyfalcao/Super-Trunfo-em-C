@@ -79,6 +79,17 @@ int main() {
     int atributo1, atributo2;
     int resultado;
 
+    // Nomes dos atributos para exibição
+    char *nomesAtributos[] = {
+        "População",
+        "Área",
+        "PIB",
+        "Número de Pontos Turísticos",
+        "PIB per Capita",
+        "Densidade Populacional"
+    };
+    
+    // Escolha dos atributos para comparação
     printf("\nEscolha dois atributos para comparar:\n");
     printf("1. População\n");
     printf("2. Área\n");
@@ -87,9 +98,11 @@ int main() {
     printf("5. PIB per Capita\n");
     printf("6. Densidade Populacional\n");
 
+    // Escolha do primeiro atributo
     printf("Escolha o primeiro atributo: ");
     scanf("%d", &atributo1);
 
+    // Escolha do segundo atributo
     do {
         printf("Escolha o segundo atributo: ");
         scanf("%d", &atributo2);
@@ -98,9 +111,11 @@ int main() {
         }
     } while (atributo2 == atributo1);
 
+    // Variáveis para armazenar os valores dos atributos escolhidos
     float valor1_c1, valor1_c2;
     float valor2_c1, valor2_c2;
 
+    // Comparação dos atributos escolhidos
     switch (atributo1) {
     case 1:
         valor1_c1 = populacao1;
@@ -133,6 +148,8 @@ int main() {
         resultado = (densidade1 < densidade2);
         break;
     }
+
+    // Comparação do segundo atributo
     switch (atributo2) {
     case 1:
         valor2_c1 = populacao1;
@@ -170,11 +187,15 @@ int main() {
         return 0;
     }
 
+    // Exibição dos resultados
     printf("\nResultado:\n");
     printf("%s X %s\n", nomeDaCidade1, nomeDaCidade2);
 
-    printf("\nAtributo 1 (%d): %.2f vs %.2f\n", atributo1, valor1_c1, valor1_c2);
-    printf("Atributo 2 (%d): %.2f vs %.2f\n", atributo2, valor2_c1, valor2_c2);
+    printf("\nAtributo 1 (%s): %.2f vs %.2f\n",
+       nomesAtributos[atributo1 - 1], valor1_c1, valor1_c2);
+
+    printf("Atributo 2 (%s): %.2f vs %.2f\n",
+       nomesAtributos[atributo2 - 1], valor2_c1, valor2_c2);
 
     if (resultado)
         printf("\nCarta 1 (%s) venceu!\n", nomeDaCidade1);
